@@ -14,8 +14,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx babel -d ./dist ./src",
-    "prepublishOnly": "npx babel -d ./dist ./src --minified --no-comments",
-    "publish": "npm publish --access=public"
+    "prepublishOnly": "npx babel -d ./dist ./src --minified --no-comments"
   },
   "author": "Kiril Reznik",
   "license": "MIT",
@@ -26,6 +25,9 @@
   },
   "bugs": {
     "url": "https://github.com/Aternus/babel-plugin-include/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-rc.1",
