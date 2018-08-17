@@ -1,0 +1,40 @@
+{
+  "name": "@aternus/babel-plugin-include",
+  "version": "1.0.0",
+  "description": "Adds the ability to use `include` as part of the JavaScript syntax. Includes external JavaScript code inline.",
+  "keywords": [
+    "babel",
+    "plugin",
+    "javascript",
+    "include",
+    "external",
+    "file",
+    "inline"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx babel -d ./dist ./src",
+    "prepublishOnly": "npx babel -d ./dist ./src --minified --no-comments"
+  },
+  "author": "Kiril Reznik",
+  "license": "MIT",
+  "homepage": "https://github.com/Aternus/babel-plugin-include",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aternus/babel-plugin-include.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aternus/babel-plugin-include/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@types/node": "^8.10.26",
+    "eslint": "^5.3.0",
+    "eslint-config-google": "^0.9.1"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.0.0-rc.1"
+  }
+}
