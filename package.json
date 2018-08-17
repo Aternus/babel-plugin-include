@@ -14,7 +14,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx babel -d ./dist ./src",
-    "prepublishOnly": "npx babel -d ./dist ./src --minified --no-comments"
+    "prepublishOnly": "npx babel -d ./dist ./src --minified --no-comments",
+    "publish": "npm publish --access=public"
   },
   "author": "Kiril Reznik",
   "license": "MIT",

@@ -90,7 +90,7 @@ You can provide an options object to modify the default behavior of the plugin.
 ```javascript
 {
   plugins: [
-    ['include', options]
+    ['@aternus/babel-plugin-include', options]
   ];
 }
 ```
@@ -119,7 +119,7 @@ The encoding option specifies which encoding to use when including files. Defaul
 {
   plugins: [
     [
-      'include', {
+      '@aternus/babel-plugin-include', {
       'encoding': 'utf16'
     }]
   ];
