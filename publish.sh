@@ -22,11 +22,16 @@ publish() {
     npm publish
 }
 
-git_push() {
-    echo "Adding files to git, committing changes and pushing to remote..."
+git_add() {
+    echo "Adding files to git, committing changes..."
     cd ${GIT_ROOT}
     git add .
     git commit -m "version ${VERSION}"
+}
+
+git_push() {
+    echo "Pushing to remote..."
+    cd ${GIT_ROOT}
     git push
 }
 
@@ -39,9 +44,7 @@ git_add_tag() {
 
 ##
 # Run
+#
+# Create a success chain
 ##
-build
-update_version
-publish
-git_push
-git_add_tag
+build && git_add && update_version
