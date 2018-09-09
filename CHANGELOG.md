@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.3] - 2018-09-09
 ### Added
 - Changelog.
+- Publish script.
 
 ### Changed
 - Updated to Babel 7.0.0.
