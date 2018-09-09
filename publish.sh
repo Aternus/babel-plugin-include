@@ -15,6 +15,8 @@ build() {
 }
 
 update_version () {
+    # must be run on a clean git directory
+    # automatically adds a git tag
     npm version "${VERSION}"
 }
 
@@ -35,10 +37,9 @@ git_push() {
     git push
 }
 
-git_add_tag() {
-    echo "Adding a git tag for the new version and pushing to remote..."
+git_push_tags() {
+    echo "Pushing tags to remote..."
     cd ${GIT_ROOT}
-    git tag -a "${VERSION}" -m "${VERSION}"
     git push --prune --tags
 }
 
@@ -47,4 +48,4 @@ git_add_tag() {
 #
 # Create a success chain
 ##
-build && git_add && update_version
+build && git_add && update_version && publish && git_push && git_push_tags
