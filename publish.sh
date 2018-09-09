@@ -60,7 +60,7 @@ git_push_tags() {
 
 ##
 # Run
-#
-# Create a success chain
 ##
-build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
+build
+git_add
+update_version && publish && git_push && git_push_tags && print_success "Complete."
