@@ -21,9 +21,7 @@ export default function({types: t}) {
           t.assertStringLiteral(args[0]);
 
           // get the path of the invoking file
-          const pathOfTheInvokingFile =
-              this.file.parserOpts.sourceFileName ||
-              this.file.parserOpts.filename;
+          const pathOfTheInvokingFile = this.file.opts.filename; // v7 and v6
 
           // error checking
           if (pathOfTheInvokingFile === undefined) {
