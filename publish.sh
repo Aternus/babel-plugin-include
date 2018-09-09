@@ -12,11 +12,11 @@ VERSION=$1
 ##
 print_info() {
     # blue
-    echo -e "-=> \e[96m$1\e[39m"
+    echo -e "\e[96m-=> $1\e[39m"
 }
 
 print_success() {
-    echo -e "-=> \e[92m$1\e[39m"
+    echo -e "\e[92m-=> $1\e[39m"
 }
 
 ##
