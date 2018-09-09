@@ -8,40 +8,52 @@ GIT_ROOT=$(git rev-parse --show-toplevel)
 VERSION=$1
 
 ##
+# Helper Functions
+##
+print_info() {
+    # blue
+    echo -e "-=> \e[96m$1\e[39m"
+}
+
+print_success() {
+    echo -e "-=> \e[92m$1\e[39m"
+}
+
+##
 # Functions
 ##
 build() {
-    echo "~~~ Building..."
+    print_info "Building..."
     npm run build
 }
 
 update_version () {
-    echo "~~~ Updating version..."
+    print_info "Updating version..."
     # must be run on a clean git directory
     # automatically adds a git tag
     npm version "${VERSION}"
 }
 
 publish() {
-    echo "~~~ Publishing to npmjs.com..."
+    print_info "Publishing to npmjs.com..."
     npm publish
 }
 
 git_add() {
-    echo "~~~ Adding files to git, committing changes..."
+    print_info "Adding files to git, committing changes..."
     cd ${GIT_ROOT}
     git add .
     git commit -m "version ${VERSION}"
 }
 
 git_push() {
-    echo "~~~ Pushing to remote..."
+    print_info "Pushing to remote..."
     cd ${GIT_ROOT}
     git push
 }
 
 git_push_tags() {
-    echo "~~~ Pushing tags to remote..."
+    print_info "Pushing tags to remote..."
     cd ${GIT_ROOT}
     git push --prune --tags
 }
@@ -51,4 +63,4 @@ git_push_tags() {
 #
 # Create a success chain
 ##
-build && git_add && update_version && publish && git_push && git_push_tags
+build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
