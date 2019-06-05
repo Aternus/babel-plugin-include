@@ -27,7 +27,7 @@ export default function({types: t}) {
           if (pathOfTheInvokingFile === undefined) {
             throw new Error(
                 'The include function could not determine the path ' +
-                'of the invoking file.'
+                'of the invoking file.',
             );
           }
 
@@ -62,7 +62,7 @@ export default function({types: t}) {
           // replace the include node with the ast of the included file
           p.replaceWithMultiple(ast);
         }
-      }
-    }
+      },
+    },
   };
 }

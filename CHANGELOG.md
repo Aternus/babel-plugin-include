@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [1.0.12] - 2019-06-05
+### Changed
+- Updated README.
+
+### Security
+- Updated npm dependencies.
+
 ## [1.0.11] - 2018-11-27
 ### Security
 - Updated npm dependencies.

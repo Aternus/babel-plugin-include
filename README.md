@@ -5,10 +5,11 @@ Adds support for the `include()` function to the Babel compiler.
 
 ## Why use this plugin?
 
-If you ever used a bundler (Webpack/Browserify) or a task runner (Grunt/Gulp) just to manage includes, 
-this is for you.
+A simple way to organize and reuse code.
 
 The goal of this plugin is to allow a "native" way of including JavaScript code inline - at compilation time.
+
+Sometimes a bundler (Webpack/Browserify) or a task runner (Grunt/Gulp) is just too much overhead.
 
 
 ## Installation
