@@ -9,7 +9,7 @@ const parser = require('@babel/parser');
  *
  * @return {object}
  */
-export default function({types: t}) {
+export default function({ types: t }) {
   return {
     visitor: {
       CallExpression(p, state) {
@@ -25,28 +25,21 @@ export default function({types: t}) {
 
           // error checking
           if (pathOfTheInvokingFile === undefined) {
-            throw new Error(
-                'The include function could not determine the path ' +
-                'of the invoking file.',
-            );
+            throw new Error('The include function could not determine the path of the invoking file.');
           }
 
           // calculate the root directory
-          const root =
-              state.opts.root ||
-              path.dirname(pathOfTheInvokingFile);
+          const root = state.opts.root || path.dirname(pathOfTheInvokingFile);
 
           // set file encoding
-          const encoding =
-              state.opts.encoding ||
-              'utf8';
+          const encoding = state.opts.encoding || 'utf8';
 
           // generate the full path to the file to be included
           const fileRelPath = args[0].value;
           const filePath = path.join(root, fileRelPath);
 
           // read the file
-          let fileSrc = fs.readFileSync(filePath, {encoding});
+          let fileSrc = fs.readFileSync(filePath, { encoding });
 
           // if the file is a buffer, convert it to a string
           if (fileSrc instanceof Buffer) {

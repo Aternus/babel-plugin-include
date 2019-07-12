@@ -30,14 +30,15 @@
     "access": "public"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@types/node": "^8.10.49",
-    "eslint": "^5.16.0",
-    "eslint-config-google": "^0.13.0"
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@types/node": "^10.14.12",
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0",
+    "prettier": "^1.18.2"
   },
   "dependencies": {
-    "@babel/parser": "^7.4.5"
+    "@babel/parser": "^7.5.0"
   }
 }
