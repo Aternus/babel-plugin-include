@@ -19,6 +19,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Security
 
+## [1.0.14] - 2019-07-12
+
+### Added
+
+- Added ESLint prettier config
+
+### Changed
+
+- Adjusted ESLint rules to comply with Prettier
+
 ## [1.0.13] - 2019-07-12
 
 ### Added
