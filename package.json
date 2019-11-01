@@ -1,6 +1,6 @@
 {
   "name": "@aternus/babel-plugin-include",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Adds the ability to use `include` as part of the JavaScript syntax. Includes external JavaScript code inline.",
   "keywords": [
     "babel",
