@@ -41,20 +41,20 @@ publish() {
 
 git_add() {
     print_info "Adding files to git, committing changes..."
-    cd ${GIT_ROOT}
+    cd ${GIT_ROOT} || return
     git add .
     git commit -m "version ${VERSION}"
 }
 
 git_push() {
     print_info "Pushing to remote..."
-    cd ${GIT_ROOT}
+    cd ${GIT_ROOT} || return
     git push
 }
 
 git_push_tags() {
     print_info "Pushing tags to remote..."
-    cd ${GIT_ROOT}
+    cd ${GIT_ROOT} || return
     git push --prune --tags
 }
 
