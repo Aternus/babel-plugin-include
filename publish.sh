@@ -11,51 +11,51 @@ VERSION=$1
 # Helper Functions
 ##
 print_info() {
-    # blue
-    echo -e "\e[96m-=> $1\e[39m"
+  # blue
+  echo -e "\e[96m-=> $1\e[39m"
 }
 
 print_success() {
-    echo -e "\e[92m-=> $1\e[39m"
+  echo -e "\e[92m-=> $1\e[39m"
 }
 
 ##
 # Functions
 ##
 build() {
-    print_info "Building..."
-    npm run build
+  print_info "Building..."
+  npm run build
 }
 
-update_version () {
-    print_info "Updating version..."
-    # must be run on a clean git directory
-    # automatically adds a git tag
-    npm version "${VERSION}"
+update_version() {
+  print_info "Updating version..."
+  # must be run on a clean git directory
+  # automatically adds a git tag
+  npm version "${VERSION}"
 }
 
 publish() {
-    print_info "Publishing to npmjs.com..."
-    npm publish
+  print_info "Publishing to npmjs.com..."
+  npm publish
 }
 
 git_add() {
-    print_info "Adding files to git, committing changes..."
-    cd ${GIT_ROOT} || return
-    git add .
-    git commit -m "version ${VERSION}"
+  print_info "Adding files to git, committing changes..."
+  cd ${GIT_ROOT} || return
+  git add .
+  git commit -m "version ${VERSION}"
 }
 
 git_push() {
-    print_info "Pushing to remote..."
-    cd ${GIT_ROOT} || return
-    git push
+  print_info "Pushing to remote..."
+  cd ${GIT_ROOT} || return
+  git push
 }
 
 git_push_tags() {
-    print_info "Pushing tags to remote..."
-    cd ${GIT_ROOT} || return
-    git push --prune --tags
+  print_info "Pushing tags to remote..."
+  cd ${GIT_ROOT} || return
+  git push --prune --tags
 }
 
 ##

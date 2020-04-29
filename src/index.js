@@ -9,7 +9,7 @@ const parser = require('@babel/parser');
  *
  * @return {object}
  */
-export default function({ types: t }) {
+export default function ({ types: t }) {
   return {
     visitor: {
       CallExpression(p, state) {
