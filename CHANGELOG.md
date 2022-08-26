@@ -19,6 +19,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Security
 
+## [1.0.22]
+
+### Security
+
+- Updated npm dependencies
+
+### Changed
+
+- Updated Bash scripts
+
 ## [1.0.21]
 
 ### Security
