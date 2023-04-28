@@ -19,6 +19,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Security
 
+## [1.0.26]
+
+### Removed
+
+- Removed unneeded .md files from npm dist
+
 ## [1.0.25]
 
 ### Removed

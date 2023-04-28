@@ -7,4 +7,3 @@ prettier.config.js
 .eslintrc.json
 *.sh
 CHANGELOG.md
-README.md
