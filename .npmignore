@@ -1,9 +1,10 @@
 .idea/
 node_modules/
 src/
-tests/
+test/
 babel.config.js
 prettier.config.js
-.eslintrc.json
+.eslintrc.js
 *.sh
 CHANGELOG.md
+.nvmrc

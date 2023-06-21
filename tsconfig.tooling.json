@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.no_composite.base.json",
+  "compilerOptions": {
+    "types": ["@types/node"],
+    "noEmit": true,
+    "allowJs": true
+  },
+  "include": [".eslintrc.js", "babel.config.js", "prettier.config.js"]
+}
