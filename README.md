@@ -6,9 +6,11 @@ Adds support for the `include()` function to the Babel compiler.
 
 A simple way to organize and reuse code.
 
-The goal of this plugin is to allow a "native" way of including JavaScript code inline - at compilation time.
+The goal of this plugin is to allow a "native" way of including JavaScript code
+inline - at compilation time.
 
-Sometimes a bundler (Webpack/Browserify) or a task runner (Grunt/Gulp) is just too much overhead.
+Sometimes a bundler (Webpack/Browserify) or a task runner (Grunt/Gulp) is just
+too much overhead.
 
 ## Installation
 
@@ -72,10 +74,13 @@ console.log('State manager code');
 
 ## FAQ
 
-- The `include()` function takes a single string as an argument. Following arguments are ignored.
-- The included file must be a valid JavaScript file. If there are errors the compiler will throw an error.
+- The `include()` function takes a single string as an argument. Following
+  arguments are ignored.
+- The included file must be a valid JavaScript file. If there are errors the
+  compiler will throw an error.
 - The default encoding is assumed to be `utf8`.
-- You can use relative and absolute filenames, and change the `root` directory in plugin options.
+- You can use relative and absolute filenames, and change the `root` directory
+  in plugin options.
 
 ## Options
 
@@ -91,7 +96,8 @@ You can provide an options object to modify the default behavior of the plugin.
 
 #### `root`
 
-Specify the root directory from which all files will be included. Default is `root of the including file`.
+Specify the root directory from which all files will be included. Default is
+`root of the including file`.
 
 ```javascript
 {
@@ -108,8 +114,8 @@ Specify the root directory from which all files will be included. Default is `ro
 
 #### `encoding`
 
-Specify the encoding for the files. The encoding option specifies which encoding to use when including files. Default is
-`utf8`.
+Specify the encoding for the files. The encoding option specifies which encoding
+to use when including files. Default is `utf8`.
 
 ```javascript
 {
@@ -126,7 +132,8 @@ Specify the encoding for the files. The encoding option specifies which encoding
 
 ## Credits
 
-[vihanb](https://github.com/vihanb) for the original package (no longer maintained).
+[vihanb](https://github.com/vihanb) for the original package (no longer
+maintained).
 
 ## License
 

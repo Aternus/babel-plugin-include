@@ -2,14 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import parser from '@babel/parser';
 import * as BabelCoreNS from '@babel/core';
-import { CustomPluginPass } from './index.types';
+import {CustomPluginPass} from './index.types';
 
 type BabelCore = typeof BabelCoreNS;
 
-export default function (babel: BabelCore): BabelCoreNS.PluginObj<CustomPluginPass> {
-  console.log({ babel });
+export default function (
+  babel: BabelCore,
+): BabelCoreNS.PluginObj<CustomPluginPass> {
+  console.log({babel});
 
-  const { types: t } = babel;
+  const {types: t} = babel;
   return {
     name: 'babel-plugin-include',
     visitor: {
