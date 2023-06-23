@@ -7,6 +7,6 @@ module.exports = {
     node: true,
   },
   globals: {
-    include: 'readonly'
+    include: 'readonly',
   },
 };
