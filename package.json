@@ -59,6 +59,9 @@
   "dependencies": {
     "@babel/core": "^7.22.5"
   },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
   "engines": {
     "node": ">=14"
   }
