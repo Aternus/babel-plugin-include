@@ -21,12 +21,10 @@
     "lint:prettier": "npx prettier --write .",
     "lint:eslint": "npx eslint --fix .",
     "lint": "npm-run-all lint:prettier lint:eslint",
-    "pretest": "npm-run-all build",
-    "test": "npx babel --plugins ./dist/src/index.js test/main.js",
-    "build": "npm-run-all clean lint build:dist",
     "predev": "npm-run-all clean lint build:dev",
     "dev": "npx babel --plugins ./dist/src/index.js test/main.js",
-    "prepublishOnly": "npm-run-all test"
+    "pretest": "npm-run-all clean lint build:dist",
+    "test": "npx babel --plugins ./dist/src/index.js test/main.js"
   },
   "author": "Kiril Reznik",
   "license": "MIT",

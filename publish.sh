@@ -24,7 +24,7 @@ print_success() {
 ##
 build() {
   print_info "Building..."
-  npm run build
+  npm run test
 }
 
 update_version() {
@@ -61,6 +61,4 @@ git_push_tags() {
 ##
 # Run
 ##
-build
-git_add
-update_version && publish && git_push && git_push_tags && print_success "Complete."
+build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
