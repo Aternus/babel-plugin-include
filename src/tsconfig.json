@@ -1,6 +1,6 @@
 {
   "extends": "../tsconfig.base.json",
-  "files": ["index.ts", "index.types.ts"],
+  "files": ["index.ts", "index.errors.ts", "index.types.ts"],
   "compilerOptions": {
     "outDir": "../dist"
   }

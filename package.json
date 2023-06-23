@@ -17,6 +17,7 @@
   "scripts": {
     "clean": "npx rimraf ./dist",
     "build:dist": "npx tsc --build",
+    "build:dist:dev": "npx tsc -p tsconfig.dev.json --build",
     "build:watch": "npx tsc --build --watch",
     "build": "npm-run-all clean build:dist",
     "watch": "npm-run-all clean build:watch",
@@ -25,7 +26,7 @@
     "lint": "npm-run-all lint:prettier lint:eslint",
     "pretest": "npm-run-all lint build",
     "test": "npx babel --plugins ./dist/src/index.js test/main.js",
-    "predev": "npm-run-all build",
+    "predev": "npm-run-all build:dist:dev",
     "dev": "npx babel --plugins ./dist/src/index.js test/main.js",
     "prepublishOnly": "npx babel -d ./dist ./src --minified --no-comments"
   },
@@ -57,5 +58,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.22.5"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
