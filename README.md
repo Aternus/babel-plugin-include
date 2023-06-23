@@ -72,6 +72,34 @@ console.log('Welcome code');
 console.log('State manager code');
 ```
 
+## Integrations
+
+### IDEs / TypeScript
+
+The plugin ships with TypeScript types which the IDEs and TypeScript can use to
+understand the new `include` syntax capability without you having to take any
+action.
+
+⚠ Keep in mind that you'll still need to use Babel as the transpiler (this is a
+babel plugin after all 😅)
+
+### ESLint
+
+The plugin ships with an ESLint config you can extend to avoid getting errors
+about `include` being undefined.
+
+In your `.eslintrc.js`:
+
+```javascript
+module.exports = {
+  extends: [
+    // ...
+    '@aternus/babel-plugin-include/eslint',
+  ],
+  // ...
+};
+```
+
 ## FAQ
 
 - The `include()` function takes a single string as an argument. Following

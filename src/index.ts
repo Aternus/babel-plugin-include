@@ -1,8 +1,8 @@
 import fs from 'fs';
 import nodePath from 'path';
 
-import {BabelCore, CustomNodePath, CustomPlugin} from './index.types';
-import {FileNotFoundError} from './index.errors';
+import {BabelCore, CustomNodePath, CustomPlugin} from './types';
+import {FileNotFoundError} from './errors';
 
 function BabelPluginInclude(babel: BabelCore): CustomPlugin {
   const {types} = babel;
