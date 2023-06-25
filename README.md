@@ -44,7 +44,7 @@ require('@babel/core').transform('code', {
 
 ## Example
 
-The `include()` function take an argument, a filename (`file.js`).
+The `include()` function takes an argument, a filename, e.g. `file.js`.
 
 ### `main.js`
 
