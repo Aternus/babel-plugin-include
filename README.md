@@ -94,11 +94,14 @@ In your `.eslintrc.js`:
 module.exports = {
   extends: [
     // ...
-    '@aternus/babel-plugin-include/eslint',
+    './node_modules/@aternus/babel-plugin-include/eslint',
   ],
   // ...
 };
 ```
+
+⚠ `./node_modules` is required to ensure that ESLint won't add "eslint-config"
+to the package name, resulting in a wrong path.
 
 ## FAQ
 
