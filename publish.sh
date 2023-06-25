@@ -44,13 +44,6 @@ publish_dry_run() {
   npm publish --dry-run
 }
 
-git_add() {
-  print_info "Adding files to git, committing changes..."
-  cd "${GIT_ROOT}" || return
-  git add .
-  git commit -m "version ${VERSION}"
-}
-
 git_push() {
   print_info "Pushing to remote..."
   cd "${GIT_ROOT}" || return
@@ -66,6 +59,6 @@ git_push_tags() {
 ##
 # Run
 ##
-build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
+build && update_version && publish && git_push && git_push_tags && print_success "Complete."
 
 #build && publish_dry_run && print_success "Complete."
