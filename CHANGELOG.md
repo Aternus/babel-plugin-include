@@ -2,7 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
@@ -18,6 +19,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 
 ### Security
+
+## [2.0.0]
+
+### Added
+
+- Added integration with IDEs / TypeScript
+- Added integration with ESLint
+- Added the expected Node.js version when using the plugin
+- Added the expected Babel version when using the plugin
+
+### Changed
+
+- Rewritten in TypeScript
+
+### Security
+
+- Updated npm dependencies
 
 ## [1.0.26]
 
