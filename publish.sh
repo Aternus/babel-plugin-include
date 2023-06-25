@@ -24,7 +24,7 @@ print_success() {
 ##
 build() {
   print_info "Building..."
-  npm run prod
+  npm run dist
 }
 
 update_version() {
@@ -37,6 +37,11 @@ update_version() {
 publish() {
   print_info "Publishing to npmjs.com..."
   npm publish
+}
+
+publish_dry_run() {
+  print_info "Publishing to npmjs.com..."
+  npm publish --dry-run
 }
 
 git_add() {
@@ -61,4 +66,6 @@ git_push_tags() {
 ##
 # Run
 ##
-build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
+#build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
+
+build && publish_dry_run && print_success "Complete."

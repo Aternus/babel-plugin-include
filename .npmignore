@@ -224,6 +224,7 @@ dist
 .pnp.*
 
 # ATERNUS
+.idea/
 .run/
 src/
 tests/
@@ -236,6 +237,7 @@ tests/
 .nvmrc
 .prettierignore
 CHANGELOG.md
+jest.config.js
 prettier.config.js
 *.sh
 tsconfig.*
