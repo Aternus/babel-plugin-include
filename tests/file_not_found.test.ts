@@ -5,8 +5,7 @@ import {FileNotFoundError} from '../src/errors';
 
 describe('babel-plugin-include', () => {
   it('throws an error when the file to include does not exist', () => {
-    const nonexistentFilePath = 'fixtures/nonexistent.js';
-    const code = `include("${nonexistentFilePath}");`;
+    const code = `include("fixtures/nonexistent.js");`;
 
     expect(() => {
       transform(code, {

@@ -1,73 +1,73 @@
 import path from 'path';
+import {promises as fs} from 'fs';
 import {transform} from '@babel/core';
 
 import babelPluginInclude from '../src/index';
 
-const dummyFileContent = 'const x = 10;';
-
-jest.mock('fs', () => ({
-  ...jest.requireActual('fs'),
-  readFileSync: jest.fn().mockImplementation((path, encoding) => {
-    if (path.endsWith('basic_javascript.js')) {
-      return dummyFileContent;
-    }
-
-    return jest.requireActual('fs').readFileSync(path, encoding);
-  }),
-}));
-
 describe('babel-plugin-include', () => {
-  it('replaces include("relativePathToFile") with the content of pathToFile', () => {
-    const code = 'include("./fixtures/basic_javascript.js");';
-    const expectedCode = dummyFileContent;
+  it('replaces include("relativePathToFile") with the content of pathToFile', async () => {
+    const code = 'include("./fixtures/a_javascript.js");';
+    const expectedCode = await fs.readFile(
+      path.resolve(__dirname, './fixtures/a_javascript.js'),
+      'utf-8',
+    );
 
     const result = transform(code, {
       filename: __filename,
       plugins: [[babelPluginInclude]],
     });
 
-    expect(result?.code?.trim()).toEqual(expectedCode);
+    expect(result?.code?.trim()).toEqual(expectedCode.trim());
   });
 
-  it('replaces include("absolutePathToFile") with the content of pathToFile', () => {
+  it('replaces include("absolutePathToFile") with the content of pathToFile', async () => {
     const absolutePathToFile = path.resolve(
       __dirname,
-      './fixtures/basic_javascript.js',
+      './fixtures/a_javascript.js',
     );
     const code = `include("${absolutePathToFile}");`;
-    const expectedCode = dummyFileContent;
+    const expectedCode = await fs.readFile(
+      path.resolve(__dirname, './fixtures/a_javascript.js'),
+      'utf-8',
+    );
 
     const result = transform(code, {
       filename: __filename,
       plugins: [[babelPluginInclude]],
     });
 
-    expect(result?.code?.trim()).toEqual(expectedCode);
+    expect(result?.code?.trim()).toEqual(expectedCode.trim());
   });
 
-  it('uses root option and relative path to include file', () => {
+  it('uses root option and relative path to include file', async () => {
     const rootDir = path.resolve(__dirname, './fixtures');
-    const code = 'include("basic_javascript.js");';
-    const expectedCode = dummyFileContent;
+    const code = 'include("a_javascript.js");';
+    const expectedCode = await fs.readFile(
+      path.resolve(__dirname, './fixtures/a_javascript.js'),
+      'utf-8',
+    );
 
     const result = transform(code, {
       filename: __filename,
       plugins: [[babelPluginInclude, {root: rootDir}]],
     });
 
-    expect(result?.code?.trim()).toEqual(expectedCode);
+    expect(result?.code?.trim()).toEqual(expectedCode.trim());
   });
 
-  it('reads files using the provided encoding', () => {
-    const code = 'include("./fixtures/basic_javascript.js");';
-    const expectedCode = dummyFileContent;
+  it('reads files using the provided encoding', async () => {
+    const code = 'include("./fixtures/a_javascript.js");';
+    const expectedCode = await fs.readFile(
+      path.resolve(__dirname, './fixtures/a_javascript.js'),
+      'utf-8',
+    );
 
     const result = transform(code, {
       filename: __filename,
       plugins: [[babelPluginInclude, {encoding: 'latin1'}]],
     });
 
-    expect(result?.code?.trim()).toEqual(expectedCode);
+    expect(result?.code?.trim()).toEqual(expectedCode?.trim());
   });
 
   afterAll(() => {
