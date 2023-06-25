@@ -23,6 +23,7 @@
     "lint:eslint:debug": "npx eslint --debug .",
     "lint": "npm-run-all lint:prettier lint:eslint",
     "dev": "npm-run-all clean lint build:dev",
+    "preprod": "npm-run-all test",
     "prod": "npm-run-all clean lint build:dist",
     "test": "npx jest"
   },
