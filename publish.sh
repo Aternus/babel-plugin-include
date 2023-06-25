@@ -66,6 +66,6 @@ git_push_tags() {
 ##
 # Run
 ##
-#build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
+build && git_add && update_version && publish && git_push && git_push_tags && print_success "Complete."
 
-build && publish_dry_run && print_success "Complete."
+#build && publish_dry_run && print_success "Complete."
