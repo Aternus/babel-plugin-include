@@ -226,7 +226,7 @@ dist
 # ATERNUS
 .run/
 src/
-test/
+tests/
 
 .editorconfig
 .eslintignore

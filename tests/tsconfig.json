@@ -2,6 +2,11 @@
   "extends": "../tsconfig.no_composite.base.json",
   "files": [],
   "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "removeComments": false,
+
     "noEmit": true
   }
 }
