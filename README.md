@@ -126,10 +126,10 @@ You can provide an options object to modify the default behavior of the plugin.
 
 ### The following options are available:
 
-| Option Name | Type           | Default             | Notes                                                                     |
-| ----------- | -------------- | ------------------- | ------------------------------------------------------------------------- |
-| `root`      | string         | `cwd()` of the file | The root directory from which all files will be included.                 |
-| `encoding`  | BufferEncoding | `utf-8`             | The encoding option specifies which encoding to use when including files. |
+| Option Name | Type             | Default             | Notes                                                                     |
+| ----------- | ---------------- | ------------------- | ------------------------------------------------------------------------- |
+| `root`      | `string`         | `cwd()` of the file | The root directory from which all files will be included.                 |
+| `encoding`  | `BufferEncoding` | `utf-8`             | The encoding option specifies which encoding to use when including files. |
 
 ## Credits
 
