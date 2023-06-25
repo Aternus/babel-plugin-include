@@ -22,9 +22,8 @@
     "lint:eslint": "npx eslint --fix .",
     "lint:eslint:debug": "npx eslint --debug .",
     "lint": "npm-run-all lint:prettier lint:eslint",
-    "predev": "npm-run-all clean lint build:dev",
-    "dev": "npx babel --plugins ./dist/src/index.js tests/main.js",
-    "pretest": "npm-run-all clean lint build:dist",
+    "dev": "npm-run-all clean lint build:dev",
+    "prod": "npm-run-all clean lint build:dist",
     "test": "npx jest"
   },
   "author": "Kiril Reznik",

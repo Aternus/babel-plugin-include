@@ -1,13 +1,19 @@
+import path from 'path';
 import {transform} from '@babel/core';
 
 import babelPluginInclude from '../src/index';
 
+const relativePathToDummyFile = 'fixtures/basic_javascript.js';
+const absolutePathToDummyFile = path.resolve(
+  __dirname,
+  relativePathToDummyFile,
+);
 const dummyFileContent = 'const x = 10;';
 
 jest.mock('fs', () => ({
   ...jest.requireActual('fs'),
   readFileSync: jest.fn().mockImplementation((path, encoding) => {
-    if (path === './dummy.js') {
+    if (path === absolutePathToDummyFile) {
       return dummyFileContent;
     }
 
@@ -17,12 +23,11 @@ jest.mock('fs', () => ({
 
 describe('babel-plugin-include', () => {
   it('replaces include(pathToFile) with the content of pathToFile', () => {
-    const code = 'include("./dummy.js");';
+    const code = `include("${relativePathToDummyFile}");`;
     const expectedCode = dummyFileContent;
 
     const result = transform(code, {
-      filename: './index.js',
-      // plugins: [[babelPluginInclude, {root: './', encoding: 'utf8'}]],
+      filename: __filename,
       plugins: [[babelPluginInclude]],
     });
 

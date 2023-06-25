@@ -24,7 +24,7 @@ print_success() {
 ##
 build() {
   print_info "Building..."
-  npm run test
+  npm run build
 }
 
 update_version() {
