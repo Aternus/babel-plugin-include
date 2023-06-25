@@ -71,7 +71,6 @@ describe('babel-plugin-include', () => {
   });
 
   afterAll(() => {
-    // restore the original fs.readFileSync function after running the tests
     jest.restoreAllMocks();
   });
 });
