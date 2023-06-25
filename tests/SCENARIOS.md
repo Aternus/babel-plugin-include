@@ -1,29 +1,30 @@
 # SCENARIOS
 
-1. **Basic File Inclusion**: Test that the plugin correctly replaces
+1. ✅ **Basic File Inclusion**: Test that the plugin correctly replaces
    "include(pathToFile)" with the content of "pathToFile" when given a valid
    path to a file.
 
-2. **File Not Found**: Test that the plugin appropriately handles the case where
-   "pathToFile" points to a file that does not exist. Depending on the expected
-   behavior, this could either throw an error or return some default value.
+2. ✅ **Relative Paths**: Test that the plugin correctly handles relative paths,
+   both in the form of "../file" and "./file".
 
-3. **Nested Inclusions**: Test that the plugin correctly handles the case where
-   an included file itself includes another file. This will test the plugin's
-   recursive capabilities.
+3. ✅ **Absolute Paths**: Test that the plugin correctly handles absolute paths.
 
-4. **Cyclic Inclusions**: Test how the plugin handles the case where there's a
+4. ✅ **Multiple Includes**: Test how the plugin handles a file with multiple
+   "include(pathToFile)" calls.
+
+5. ✅ **File Not Found**: Test that the plugin appropriately handles the case
+   where "pathToFile" points to a file that does not exist. Depending on the
+   expected behavior, this could either throw an error or return some default
+   value.
+
+6. ✅ **Nested Inclusions**: Test that the plugin correctly handles the case
+   where an included file itself includes another file. This will test the
+   plugin's recursive capabilities.
+
+7. **Cyclic Inclusions**: Test how the plugin handles the case where there's a
    cycle in the inclusion (File A includes File B, and File B includes File A).
    Depending on the intended behavior, it could either handle it gracefully,
    throw an error, or end up in an infinite loop.
-
-5. **Relative Paths**: Test that the plugin correctly handles relative paths,
-   both in the form of "../file" and "./file".
-
-6. **Absolute Paths**: Test that the plugin correctly handles absolute paths.
-
-7. **Multiple Includes**: Test how the plugin handles a file with multiple
-   "include(pathToFile)" calls.
 
 8. **Include in Different Scopes**: Test the behavior of the plugin when the
    include function is called inside different scopes (global scope, function
