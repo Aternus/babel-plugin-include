@@ -55,10 +55,12 @@
     "typescript": "~5.0"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.0.0",
+    "@babel/cli": "^7.0.0"
   },
   "peerDependencies": {
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.0.0",
+    "@babel/cli": "^7.0.0"
   },
   "engines": {
     "node": ">=14"

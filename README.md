@@ -15,12 +15,12 @@ too much overhead.
 ## Installation
 
 ```bash
-npm install @aternus/babel-plugin-include
+npm install -D @aternus/babel-plugin-include @babel/core @babel/cli
 ```
 
 ## Usage
 
-### `.babelrc` (Recommended)
+### `.babelrc.json` / `babel.config.json` (Recommended)
 
 ```json
 {
