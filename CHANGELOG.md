@@ -28,6 +28,7 @@ and this project adheres to
 - Added integration with ESLint
 - Added the expected Node.js version when using the plugin
 - Added the expected Babel version when using the plugin
+- Added proper unit tests framework (Jest)
 
 ### Changed
 
