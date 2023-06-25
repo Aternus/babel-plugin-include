@@ -1,6 +1,5 @@
 {
   "extends": "../tsconfig.no_composite.base.json",
-  "files": [],
   "compilerOptions": {
     "declaration": false,
     "declarationMap": false,
@@ -8,5 +7,6 @@
     "removeComments": false,
 
     "noEmit": true
-  }
+  },
+  "include": ["**/*.ts"]
 }
