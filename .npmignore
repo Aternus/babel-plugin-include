@@ -224,15 +224,18 @@ dist
 .pnp.*
 
 # ATERNUS
+.run/
 src/
 test/
 
-babel.config.js
-prettier.config.js
-.eslintrc.js
-*.sh
-CHANGELOG.md
+.editorconfig
 .eslintignore
+.eslintrc.js
 .gitignore
 .npmignore
 .nvmrc
+.prettierignore
+CHANGELOG.md
+prettier.config.js
+*.sh
+tsconfig.*
