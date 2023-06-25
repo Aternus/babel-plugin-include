@@ -9,16 +9,11 @@ A simple way to organize and reuse code.
 The goal of this plugin is to allow a "native" way of including JavaScript code
 inline - at compilation time.
 
-Sometimes a bundler (Webpack/Browserify) or a task runner (Grunt/Gulp) is just
-too much overhead.
-
 ## Installation
 
 ```bash
 npm install -D @aternus/babel-plugin-include @babel/core @babel/cli
 ```
-
-## Usage
 
 ### `.babelrc.json` / `babel.config.json` (Recommended)
 
@@ -28,23 +23,11 @@ npm install -D @aternus/babel-plugin-include @babel/core @babel/cli
 }
 ```
 
-### CLI
+## Usage
 
-```bash
-babel --plugins @aternus/babel-plugin-include main.js
-```
+The `include()` function takes an argument, a file path, e.g. `file.js`.
 
-### Node API
-
-```javascript
-require('@babel/core').transform('code', {
-  plugins: ['@aternus/babel-plugin-include'],
-});
-```
-
-## Example
-
-The `include()` function takes an argument, a filename, e.g. `file.js`.
+## Code
 
 ### `main.js`
 
@@ -70,6 +53,34 @@ console.log('State manager code');
 ```javascript
 console.log('Welcome code');
 console.log('State manager code');
+```
+
+## FAQ
+
+- The `include()` function takes a single string as an argument. Following
+  arguments are ignored.
+- The included file must be a valid JavaScript file. If there are errors the
+  compiler will throw an error.
+- The default encoding is assumed to be `utf8`.
+- You can use relative and absolute filenames, and change the `root` directory
+  in plugin options.
+
+---
+
+## Programmatic Invocation
+
+### Node API
+
+```javascript
+const transformedCode = require('@babel/core').transform(code, {
+  plugins: ['@aternus/babel-plugin-include'],
+});
+```
+
+### CLI
+
+```bash
+npx babel --plugins @aternus/babel-plugin-include main.js
 ```
 
 ## Integrations
@@ -103,16 +114,6 @@ module.exports = {
 ⚠ `./node_modules` is required to ensure that ESLint won't add "eslint-config"
 to the package name, resulting in a wrong path.
 
-## FAQ
-
-- The `include()` function takes a single string as an argument. Following
-  arguments are ignored.
-- The included file must be a valid JavaScript file. If there are errors the
-  compiler will throw an error.
-- The default encoding is assumed to be `utf8`.
-- You can use relative and absolute filenames, and change the `root` directory
-  in plugin options.
-
 ## Options
 
 You can provide an options object to modify the default behavior of the plugin.
@@ -125,41 +126,10 @@ You can provide an options object to modify the default behavior of the plugin.
 
 ### The following options are available:
 
-#### `root`
-
-Specify the root directory from which all files will be included. Default is
-`root of the including file`.
-
-```javascript
-{
-  plugins: [
-    [
-      '@aternus/babel-plugin-include',
-      {
-        root: 'project/src',
-      },
-    ],
-  ];
-}
-```
-
-#### `encoding`
-
-Specify the encoding for the files. The encoding option specifies which encoding
-to use when including files. Default is `utf8`.
-
-```javascript
-{
-  plugins: [
-    [
-      '@aternus/babel-plugin-include',
-      {
-        encoding: 'utf16',
-      },
-    ],
-  ];
-}
-```
+| Option Name | Type           | Default             | Notes                                                                     |
+| ----------- | -------------- | ------------------- | ------------------------------------------------------------------------- |
+| `root`      | string         | `cwd()` of the file | The root directory from which all files will be included.                 |
+| `encoding`  | BufferEncoding | `utf-8`             | The encoding option specifies which encoding to use when including files. |
 
 ## Credits
 
