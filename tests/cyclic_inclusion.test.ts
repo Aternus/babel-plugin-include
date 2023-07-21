@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {transform} from '@babel/core';
 
 import babelPluginInclude from '../src/index';
