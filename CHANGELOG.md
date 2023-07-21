@@ -20,6 +20,16 @@ and this project adheres to
 
 ### Security
 
+## [2.0.1]
+
+### Changed
+
+- Added ESLint ignore rules to fixtures
+
+### Security
+
+- Updated npm dependencies
+
 ## [2.0.0]
 
 ### Added
